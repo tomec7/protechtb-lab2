@@ -8,7 +8,7 @@ Najčastejšie zmeny rob v `content.js`: čísla v `proof`, balíky v `solutions
 
 ## Chatbot a dopyty
 
-Chatbot návštevníka prevedie výberom služby, zachytí jeho potrebu a kontakty a pripraví e-mail na `protechtbsupport@gmail.com`. Predmet sa automaticky nastaví podľa služby a telo e-mailu obsahuje celý prepis konverzácie. Keďže ide o statický web na GitHub Pages, návštevník musí v otvorenom e-mailovom klientovi ešte kliknúť na **Odoslať**. Automatické odosielanie bez mailového klienta vyžaduje backend alebo externú formulárovú službu.
+Chatbot návštevníka prevedie výberom služby, zachytí jeho potrebu a kontakty a odošle dopyt na `protechtbsupport@gmail.com` cez FormSubmit AJAX endpoint. Predmet sa automaticky nastaví podľa služby a telo e-mailu obsahuje celý prepis konverzácie. Klasický formulár používa rovnakú cestu. Pri prvom použití môže FormSubmit vyžiadať potvrdenie prijímacej adresy.
 
 ## Lokálne spustenie
 
