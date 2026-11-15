@@ -16,6 +16,7 @@ const intents = {audit:{label:'Secure Office audit',subject:'Dopyt – Secure Of
 const mailEndpoint = 'https://formsubmit.co/ajax/protechtbsupport@gmail.com';
 const chat = {intent:'', transcript:[]};
 const chatMessages = $('#chatbot-messages'); const chatActions = $('#chatbot-actions'); const chatForm = $('#chatbot-form'); const chatInput = $('#chatbot-input'); const chatLabel = $('#chatbot-label');
+$('#form-note').textContent = 'Ďakujeme, dopyt bol odoslaný. Ozveme sa Vám do 24 hodín.';
 function addMessage(text, from='bot') { chat.transcript.push(`${from === 'bot' ? 'PROTECHTB' : 'Návštevník'}: ${text}`); chatMessages.insertAdjacentHTML('beforeend', `<div class="chat-message ${from}">${esc(text)}</div>`); chatMessages.scrollTop = chatMessages.scrollHeight; }
 function setActions(options) { chatActions.innerHTML = options.map(([label,intent]) => `<button type="button" class="chat-option" data-chat-choice="${intent}">${esc(label)}</button>`).join(''); chatActions.querySelectorAll('[data-chat-choice]').forEach((button) => button.addEventListener('click', () => chooseIntent(button.dataset.chatChoice))); }
 function chooseIntent(intent) { chat.intent = intent; const selected = intents[intent]; addMessage(selected.label,'user'); addMessage(`Rozumiem. Čo presne chcete vyriešiť v oblasti „${selected.label}“? Napíšte nám to vlastnými slovami.`); chatActions.innerHTML = ''; chatLabel.textContent = 'Čo potrebujete vyriešiť?'; chatForm.hidden = false; chatForm.dataset.step = 'need'; chatInput.value = ''; chatInput.focus(); }
