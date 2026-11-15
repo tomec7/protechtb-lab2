@@ -3,9 +3,9 @@
 const siteContent = {
   proof: [['150+', 'realizovaných projektov'], ['24 h', 'reakcia na dopyt'], ['1 partner', 'pre IT a automatizáciu']],
   solutions: [
-    {icon:'🛡️', title:'Secure Office', text:'Praktický audit IT pre firmu bez interného bezpečnostného tímu.', items:['účty, MFA a vzdialené prístupy','sieť, Wi-Fi, firewall a aktualizácie','riziká zoradené podľa priority','plán opráv na 30 dní'], price:'od 299 €', note:'jednorazovo', cta:'Chcem audit', featured:true},
-    {icon:'💾', title:'Backup & Recovery', text:'Zálohy, ktoré nie sú iba nastavené, ale aj otestované.', items:['3-2-1 stratégia záloh','ochrana pred zmazaním a ransomware','test obnovy a mesačný report','jasné RPO/RTO pre vedenie'], price:'od 499 €', note:'implementácia', cta:'Chcem chrániť dáta'},
-    {icon:'⚡', title:'Smart Energy', text:'Prehľad a automatizácia FV, wallboxu a spotreby budovy.', items:['energetický dashboard','monitoring a upozornenia','riadenie prebytkov','vzdialená podpora partnera'], price:'na mieru', note:'podľa technológie', cta:'Chcem ukážku'}
+    {icon:'🛡️', title:'Secure Office', intent:'audit', text:'Praktický audit IT pre firmu bez interného bezpečnostného tímu.', items:['účty, MFA a vzdialené prístupy','sieť, Wi-Fi, firewall a aktualizácie','riziká zoradené podľa priority','plán opráv na 30 dní'], price:'od 299 €', note:'jednorazovo', cta:'Chcem audit', featured:true},
+    {icon:'💾', title:'Backup & Recovery', intent:'backup', text:'Zálohy, ktoré nie sú iba nastavené, ale aj otestované.', items:['3-2-1 stratégia záloh','ochrana pred zmazaním a ransomware','test obnovy a mesačný report','jasné RPO/RTO pre vedenie'], price:'od 499 €', note:'implementácia', cta:'Chcem chrániť dáta'},
+    {icon:'⚡', title:'Smart Energy', intent:'energy', text:'Prehľad a automatizácia FV, wallboxu a spotreby budovy.', items:['energetický dashboard','monitoring a upozornenia','riadenie prebytkov','vzdialená podpora partnera'], price:'na mieru', note:'podľa technológie', cta:'Chcem ukážku'}
   ],
   benefits: [['🔐 Menej rizika','MFA, aktualizácie, bezpečné prístupy a dokumentácia.'],['🔁 Rýchla obnova','Nie iba záloha, ale pravidelne overený návrat do prevádzky.'],['⏱️ Menej ručnej práce','Automatizácie, reporty a upozornenia namiesto chaosu.'],['🤝 Jeden partner','Jasná komunikácia bez zbytočného technického žargónu.']],
   energy: [['☀️','Výroba','prehľad výkonu a prebytkov'],['🏢','Spotreba','čo budova reálne využíva'],['🚗','Wallbox','nabíjanie podľa dostupnej energie']],
