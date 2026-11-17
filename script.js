@@ -7,12 +7,22 @@ $('#benefits').innerHTML = siteContent.benefits.map(([title,text]) => `<div clas
 $('#energy-flow').innerHTML = siteContent.energy.map(([icon,title,text]) => `<div class="flow"><span>${icon}</span><div><b>${esc(title)}</b><small>${esc(text)}</small></div></div>`).join('');
 $('#steps').innerHTML = siteContent.steps.map(([number,title,text]) => `<div class="step"><b>${number}</b><h3>${esc(title)}</h3><p>${esc(text)}</p></div>`).join('');
 $('#faq-list').innerHTML = siteContent.faq.map(([question,answer]) => `<details><summary>${esc(question)}<span>+</span></summary><p>${esc(answer)}</p></details>`).join('');
+$('.hero .kicker').textContent = 'IT pokoj pre malé firmy';
+$('.hero h1').innerHTML = 'Vaše IT má fungovať. <em>Vy máte podnikať.</em>';
+$('.hero .lead').textContent = 'Externé IT oddelenie pre firmy s 5–20 ľuďmi: bezpečné zálohy, test obnovy, ochrana účtov, monitoring a jasný mesačný report — bez technického chaosu.';
+$('#riesenia .section-heading .kicker').textContent = 'Jednoduché mesačné riešenia';
+$('#riesenia .section-heading h2').innerHTML = 'IT pokoj.<br>Nie ďalší chaos.';
+$('#pre-koho .kicker').textContent = 'Pre firmy, ktoré nechcú hasiť požiare';
+$('#pre-koho h2').textContent = 'Vieme, že sa vaše dáta dajú obnoviť.';
+$('#pre-koho p:not(.kicker)').textContent = 'PROTECHTB preberie dohľad nad zálohami, účtami, aktualizáciami a dokumentáciou. Vy dostanete pokoj, prehľad a konkrétny plán — nie ďalšie technické heslá.';
 const toggle = $('.menu-toggle'); toggle.addEventListener('click', () => { const expanded = toggle.getAttribute('aria-expanded') === 'true'; toggle.setAttribute('aria-expanded', String(!expanded)); $('.nav').classList.toggle('open', !expanded); });
 document.querySelectorAll('.nav a').forEach((link) => link.addEventListener('click', () => { toggle.setAttribute('aria-expanded','false'); $('.nav').classList.remove('open'); }));
 const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); }), {threshold:.1});
 document.querySelectorAll('.solution-card,.case,.step,.check,.hero-copy,.hero-visual').forEach((element) => { element.classList.add('reveal'); observer.observe(element); });
 
-const intents = {audit:{label:'Secure Office audit',subject:'Dopyt – Secure Office audit | PROTECHTB'},backup:{label:'Backup & Recovery',subject:'Dopyt – Backup & Recovery | PROTECHTB'},energy:{label:'Smart Energy',subject:'Dopyt – Smart Energy | PROTECHTB'},general:{label:'Úvodná IT konzultácia',subject:'Dopyt – úvodná IT konzultácia | PROTECHTB'}};
+const intents = {audit:{label:'IT Check – vstupný audit',subject:'Dopyt – IT Check audit | PROTECHTB'},care:{label:'IT Pokoj',subject:'Dopyt – IT Pokoj | PROTECHTB'},plus:{label:'IT Pokoj Plus',subject:'Dopyt – IT Pokoj Plus | PROTECHTB'},resilience:{label:'IT Odolnosť',subject:'Dopyt – IT Odolnosť | PROTECHTB'},backup:{label:'Backup & Recovery',subject:'Dopyt – Backup & Recovery | PROTECHTB'},energy:{label:'Smart Energy',subject:'Dopyt – Smart Energy | PROTECHTB'},general:{label:'Úvodná IT konzultácia',subject:'Dopyt – úvodná IT konzultácia | PROTECHTB'}};
+const serviceSelect = $('#service');
+if (serviceSelect) serviceSelect.innerHTML = Object.entries(intents).map(([key,item]) => `<option value="${key}">${item.label}</option>`).join('');
 const mailEndpoint = 'https://formsubmit.co/ajax/protechtbsupport@gmail.com';
 const chat = {intent:'', transcript:[]};
 const chatMessages = $('#chatbot-messages'); const chatActions = $('#chatbot-actions'); const chatForm = $('#chatbot-form'); const chatInput = $('#chatbot-input'); const chatLabel = $('#chatbot-label');
@@ -20,7 +30,7 @@ $('#form-note').textContent = 'Ďakujeme, dopyt bol odoslaný. Ozveme sa Vám do
 function addMessage(text, from='bot') { chat.transcript.push(`${from === 'bot' ? 'PROTECHTB' : 'Návštevník'}: ${text}`); const success = text.startsWith('Ďakujeme, dopyt bol odoslaný'); chatMessages.insertAdjacentHTML('beforeend', `<div class="chat-message ${from}${success ? ' success' : ''}">${esc(text)}</div>`); chatMessages.scrollTop = chatMessages.scrollHeight; }
 function setActions(options) { chatActions.innerHTML = options.map(([label,intent]) => `<button type="button" class="chat-option" data-chat-choice="${intent}">${esc(label)}</button>`).join(''); chatActions.querySelectorAll('[data-chat-choice]').forEach((button) => button.addEventListener('click', () => chooseIntent(button.dataset.chatChoice))); }
 function chooseIntent(intent) { chat.intent = intent; const selected = intents[intent]; addMessage(selected.label,'user'); addMessage(`Rozumiem. Čo presne chcete vyriešiť v oblasti „${selected.label}“? Napíšte nám to vlastnými slovami.`); chatActions.innerHTML = ''; chatLabel.textContent = 'Čo potrebujete vyriešiť?'; chatForm.hidden = false; chatForm.dataset.step = 'need'; chatInput.value = ''; chatInput.focus(); }
-function openChat(intent='') { $('#chatbot').classList.add('open'); $('#chatbot-launch').classList.add('hidden'); if (chatMessages.childElementCount) return; addMessage('Dobrý deň. Pomôžem vám vybrať riešenie a pripraviť dopyt pre PROTECHTB.'); if (intent) chooseIntent(intent); else setActions([['Chcem bezpečnostný audit','audit'],['Potrebujem zálohy a obnovu','backup'],['Zaujíma ma Smart Energy','energy'],['Neviem, čo presne potrebujem','general']]); }
+function openChat(intent='') { $('#chatbot').classList.add('open'); $('#chatbot-launch').classList.add('hidden'); if (chatMessages.childElementCount) return; addMessage('Dobrý deň. Pomôžem vám vybrať riešenie a pripraviť dopyt pre PROTECHTB.'); if (intent) chooseIntent(intent); else setActions([['Chcem IT Check audit','audit'],['Chcem pravidelnú správu IT','plus'],['Potrebujem zálohy a obnovu','resilience'],['Zaujíma ma Smart Energy','energy']]); }
 function closeChat() { $('#chatbot').classList.remove('open'); $('#chatbot-launch').classList.remove('hidden'); }
 async function sendLead(subject, body) { const payload = new URLSearchParams({_subject:subject,message:body,_captcha:'false'}); const response = await fetch(mailEndpoint, {method:'POST',mode:'no-cors',body:payload}); if (response.type !== 'opaque' && !response.ok) throw new Error('send-failed'); return true; }
 $('#chatbot-launch').addEventListener('click', () => openChat()); $('.chatbot-close').addEventListener('click', closeChat);

@@ -1,10 +1,18 @@
 # PROTECHTB Lab 2
 
-Predajná landing page pre PROTECHTB Bratislava: IT odolnosť, zálohovanie, bezpečnostný audit a Smart Energy.
+Predajná landing page pre PROTECHTB Bratislava: IT pokoj pre malé firmy, bezpečné zálohy, obnoviteľnosť a Smart Energy.
 
 ## Úpravy obsahu
 
-Najčastejšie zmeny rob v `content.js`: čísla v `proof`, balíky v `solutions`, benefity, Smart Energy kroky, proces a FAQ. Pri balíkoch zachovaj aj `intent` (`audit`, `backup` alebo `energy`), aby chatbot vytvoril správny predmet e-mailu. Vizuál a responzívne správanie je v `styles.css` a `chatbot.css`. Interakcie, menu, chatbot a animácie sú v `script.js`. Štruktúru sekcií upravuj v `index.html`.
+Najčastejšie zmeny rob v `content.js`: čísla v `proof`, balíky v `solutions`, benefity, Smart Energy kroky, proces a FAQ. Pri balíkoch zachovaj aj `intent` (`audit`, `care`, `plus`, `resilience` alebo `energy`), aby formulár a chatbot vytvorili správny predmet e-mailu. Vizuál a responzívne správanie je v `styles.css` a `chatbot.css`. Interakcie, menu, chatbot a animácie sú v `script.js`. Štruktúru sekcií upravuj v `index.html`.
+
+## Aktuálna ponuka
+
+- **IT Check** — vstupný audit za 299 €.
+- **IT Pokoj** — základný dohľad za 199 €/mes. bez DPH.
+- **IT Pokoj Plus** — hlavný balík za 349 €/mes. bez DPH.
+- **IT Odolnosť** — rozšírená správa od 549 €/mes. bez DPH.
+- **Smart Energy** — samostatná špecializácia podľa technológie.
 
 ## Chatbot a dopyty
 

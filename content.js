@@ -1,11 +1,12 @@
 // ÚPRAVY OBSAHU: texty a položky stránky sú sústredené v tomto súbore.
 // Po úprave stačí commitnúť zmenu a pushnúť ju na GitHub.
 const siteContent = {
-  proof: [['150+', 'realizovaných projektov'], ['24 h', 'reakcia na dopyt'], ['1 partner', 'pre IT a automatizáciu']],
+  proof: [['299 €', 'vstupný IT Check'], ['349 €', 'hlavný paušál / mes.'], ['24 h', 'reakcia na dopyt']],
   solutions: [
-    {icon:'🛡️', title:'Secure Office', intent:'audit', text:'Praktický audit IT pre firmu bez interného bezpečnostného tímu.', items:['účty, MFA a vzdialené prístupy','sieť, Wi-Fi, firewall a aktualizácie','riziká zoradené podľa priority','plán opráv na 30 dní'], price:'od 299 €', note:'jednorazovo', cta:'Chcem audit', featured:true},
-    {icon:'💾', title:'Backup & Recovery', intent:'backup', text:'Zálohy, ktoré nie sú iba nastavené, ale aj otestované.', items:['3-2-1 stratégia záloh','ochrana pred zmazaním a ransomware','test obnovy a mesačný report','jasné RPO/RTO pre vedenie'], price:'od 499 €', note:'implementácia', cta:'Chcem chrániť dáta'},
-    {icon:'⚡', title:'Smart Energy', intent:'energy', text:'Prehľad a automatizácia FV, wallboxu a spotreby budovy.', items:['energetický dashboard','monitoring a upozornenia','riadenie prebytkov','vzdialená podpora partnera'], price:'na mieru', note:'podľa technológie', cta:'Chcem ukážku'}
+    {icon:'🔎', title:'IT Check', intent:'audit', text:'Vstupný audit, ktorý ukáže, či sa po výpadku alebo útoku dokážete obnoviť.', items:['zálohy a test obnovy','účty, MFA a prístupy','sieť, aktualizácie a riziká','plán opráv na 30 dní'], price:'299 €', note:'jednorazovo', cta:'Objednať IT Check'},
+    {icon:'🛡️', title:'IT Pokoj', intent:'care', text:'Základný dohľad pre malé firmy, ktoré chcú mať IT pod kontrolou bez vlastného správcu.', items:['monitoring zariadení a záloh','aktualizácie a bezpečnostné kontroly','mesačný stavový report','1 hodina podpory mesačne'], price:'199 €', note:'mesačne bez DPH', cta:'Chcem IT Pokoj'},
+    {icon:'⭐', title:'IT Pokoj Plus', intent:'plus', text:'Hlavný balík pre firmy s 5–20 ľuďmi: bezpečnosť, obnova a priebežná správa v jednom.', items:['všetko z IT Pokoj','Microsoft 365, NAS a VPN','štvrťročný test obnovy','3 hodiny podpory + dokumentácia'], price:'349 €', note:'mesačne bez DPH', cta:'Chcem IT Pokoj Plus', featured:true},
+    {icon:'🚨', title:'IT Odolnosť', intent:'resilience', text:'Pre firmy, ktorým výpadok alebo strata dát môže zastaviť podnikanie.', items:['oddelené 3-2-1 zálohy','disaster recovery plán','kontrola zraniteľností','SLA a prioritná reakcia'], price:'od 549 €', note:'mesačne bez DPH', cta:'Chcem IT Odolnosť'}
   ],
   benefits: [['🔐 Menej rizika','MFA, aktualizácie, bezpečné prístupy a dokumentácia.'],['🔁 Rýchla obnova','Nie iba záloha, ale pravidelne overený návrat do prevádzky.'],['⏱️ Menej ručnej práce','Automatizácie, reporty a upozornenia namiesto chaosu.'],['🤝 Jeden partner','Jasná komunikácia bez zbytočného technického žargónu.']],
   energy: [['☀️','Výroba','prehľad výkonu a prebytkov'],['🏢','Spotreba','čo budova reálne využíva'],['🚗','Wallbox','nabíjanie podľa dostupnej energie']],
