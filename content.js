@@ -3,7 +3,7 @@
 const siteContent = {
   proof: [['299 €', 'vstupný IT Check'], ['349 €', 'hlavný paušál / mes.'], ['24 h', 'reakcia na dopyt']],
   solutions: [
-    {icon:'🔎', title:'IT Check', intent:'audit', text:'Vstupný audit, ktorý ukáže, či sa po výpadku alebo útoku dokážete obnoviť.', items:['zálohy a test obnovy','účty, MFA a prístupy','sieť, aktualizácie a riziká','plán opráv na 30 dní'], price:'299 €', note:'jednorazovo', cta:'Objednať IT Check'},
+    {icon:'🔎', title:'IT Check', intent:'audit', text:'Vstupný audit, ktorý ukáže, či sa po výpadku alebo útoku dokážete obnoviť.', items:['zálohy a test obnovy','účty, MFA a prístupy','sieť, aktualizácie a riziká','plán opráv na 30 dní'], price:'299 €', note:'jednorazovo bez DPH', cta:'Objednať IT Check'},
     {icon:'🛡️', title:'IT Pokoj', intent:'care', text:'Základný dohľad pre malé firmy, ktoré chcú mať IT pod kontrolou bez vlastného správcu.', items:['monitoring zariadení a záloh','aktualizácie a bezpečnostné kontroly','mesačný stavový report','1 hodina podpory mesačne'], price:'199 €', note:'mesačne bez DPH', cta:'Chcem IT Pokoj'},
     {icon:'⭐', title:'IT Pokoj Plus', intent:'plus', text:'Hlavný balík pre firmy s 5–20 ľuďmi: bezpečnosť, obnova a priebežná správa v jednom.', items:['všetko z IT Pokoj','Microsoft 365, NAS a VPN','štvrťročný test obnovy','3 hodiny podpory + dokumentácia'], price:'349 €', note:'mesačne bez DPH', cta:'Chcem IT Pokoj Plus', featured:true},
     {icon:'🚨', title:'IT Odolnosť', intent:'resilience', text:'Pre firmy, ktorým výpadok alebo strata dát môže zastaviť podnikanie.', items:['oddelené 3-2-1 zálohy','disaster recovery plán','kontrola zraniteľností','SLA a prioritná reakcia'], price:'od 549 €', note:'mesačne bez DPH', cta:'Chcem IT Odolnosť'}
